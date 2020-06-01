@@ -13,8 +13,7 @@
   <body style="background-color: #f0f9fd;text-align: center">
   <div align=center style="font-size:25px">订单详细信息</div><hr/>
   	 <table bordercolor='#898E90' align='center' border='3px' cellpadding='5px' cellspacing="0px">
-          <tr bgcolor="lightblue" align="center"> 
-    
+          <tr bgcolor="lightblue" align="center">
              <td>订单号：${order.order_no }</td>
              <td colspan="2">订单金额：¥：${order.total  }</td>
              <td colspan="2">订单状态：${order.status }</td>
@@ -22,10 +21,10 @@
           </tr>
           <c:forEach items="${items}" var="item">
 			<tr align='center'> 
-				 <td>${item.book.name }</td>
-				 <td style="width: 100px;"><img style="width:32px;height: 20px" src="${pageContext.request.contextPath}/back/img/${item.book.cover}"></td>
-				 <td style="width: 180px;">单价：¥${item.book.price }</td>
-				 <td style="width: 200px;">当当价：¥${item.book.dprice }</td>
+				 <td>${item.name }</td>
+				 <td style="width: 100px;"><img style="width:32px;height: 20px" src="${pageContext.request.contextPath}/back/img/${item.cover}"></td>
+				 <td style="width: 180px;">单价：¥${item.price }</td>
+				 <td style="width: 200px;">当当价：¥${item.dprice }</td>
 				 <td style="width: 100px;">${item.count }</td>
 			</tr>
 			</c:forEach>

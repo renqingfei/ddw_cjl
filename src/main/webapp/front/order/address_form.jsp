@@ -11,7 +11,15 @@
 	$(function(){
 		$("#address").change(function(){
 		var val=$(this).find("option:selected").val();
-		window.location.href="${pageContext.request.contextPath}/address/getAddressById?id="+val;
+		if(val != "" && val != undefined){
+			window.location.href="${pageContext.request.contextPath}/address/getAddressById?id="+val;
+		}else {
+			$("#receiveName").val("");
+			$("#fullAddress").val("");
+			$("#postalCode").val("");
+			$("#phone").val("");
+			$("#addressId").val("");
+		}
 		});
 	});
 	</script>
@@ -24,7 +32,7 @@
 		</div>
 		<div class="fill_message">
 			<p>
-				选择地址：<span style="color:red;font-size: 21px;margin-left: 45px;"></span>
+				选择地址：<span style="color:red;font-size: 21px;margin-left: 45px;">${message}</span>
 				<select id="address">
 				<option value="">
 				填写新地址
@@ -40,16 +48,16 @@
 					</c:forEach>
 				</select>
 			</p>
-			<form name="ctl00" method="get" action="${pageContext.request.contextPath}/Order/addOrder" id="f">
-				<input type="hidden" name="address.id" id="addressId" value="${address.id }"/>
+			<form name="ctl00" method="get" action="${pageContext.request.contextPath}/order/addorder" id="f">
+				<input type="hidden" name="id" id="addressId" value="${address.id }"/>
 
-				<table class="tab_login">
+					<table class="tab_login">
 					<tr>
 						<td valign="top" class="w1">
 							收件人姓名：
 						</td>
 						<td>
-							<input type="text" class="text_input" name="address.name" id="receiveName" value="${address.name} "/>
+							<input type="text" class="text_input" name="name" id="receiveName" value="${address.name} "/>
 							<div class="text_left" id="nameValidMsg">
 								<p>
 									请填写有效的收件人姓名
@@ -62,7 +70,7 @@
 							收件人详细地址：
 						</td>
 						<td>
-							<input type="text" name="address.local" class="text_input" id="fullAddress" value="${address.local }"/>
+							<input type="text" name="local" class="text_input" id="fullAddress" value="${address.local }"/>
 							<div class="text_left" id="addressValidMsg">
 								<p>
 									请填写有效的收件人的详细地址
@@ -75,7 +83,7 @@
 							邮政编码
 						</td>
 						<td>
-							<input type="text" class="text_input" name="address.zip_code" id="postalCode" value="${address.zip_code }"/>
+							<input type="text" class="text_input" name="zip_code" id="postalCode" value="${address.zip_code }"/>
 							<div class="text_left" id="codeValidMsg">
 								<p>
 									请填写有效的收件人的邮政编码
@@ -88,7 +96,7 @@
 							电话
 						</td>
 						<td>
-							<input type="text" class="text_input" name="address.phone" id="phone" value="${address.phone }"/>
+							<input type="text" class="text_input" name="phone" id="phone" value="${address.phone }"/>
 							<div class="text_left" id="phoneValidMsg">
 								<p>
 									请填写有效的收件人的电话

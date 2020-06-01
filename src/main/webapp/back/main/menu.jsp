@@ -45,7 +45,7 @@
   			<a style="text-decoration: none;" href="${pageContext.request.contextPath}/book/selectAll"  target="Homepage">图书管理</a><br/><br/>
   		</div>
   		<div class="aa">
-  			<a style="text-decoration: none;" href="${pageContext.request.contextPath}/Order/selectAll"  target="Homepage">订单管理</a><br/><br/>
+  			<a style="text-decoration: none;" href="${pageContext.request.contextPath}/order/queryAll"  target="Homepage">订单管理</a><br/><br/>
   		</div>
   		<div class="aa">
   			<a style="text-decoration: none;" href="${pageContext.request.contextPath}/QueryAll" target="Homepage">用户管理</a><br/><br/>

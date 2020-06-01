@@ -18,7 +18,7 @@
 		<span class="head_toutext" id="logininfo">
 		<b>您好！${sessionScope.login.nickname}！！欢迎光临当当网</b>
 		<c:if test="${sessionScope.login.nickname!=null}">
-		[&nbsp;<a href="${pageContext.request.contextPath}/book/LogOut" class="b">登出</a>&nbsp;]
+		[&nbsp;<a href="${pageContext.request.contextPath}/" class="b">登出</a>&nbsp;]
 		</c:if>
 		<c:if test="${sessionScope.login.nickname==null}">
 		[&nbsp;<a href="${pageContext.request.contextPath}/front/user/login_form.jsp" class="b">登录</a>|

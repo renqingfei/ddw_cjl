@@ -11,7 +11,8 @@ public class Order {//??????
 	private Date create_date;
 	private int address_id;
 	private int user_id;
-	private Address address;
+	private String name;
+	private String local;
 
 	@Override
 	public String toString() {
@@ -23,7 +24,8 @@ public class Order {//??????
 				", create_date=" + create_date +
 				", address_id=" + address_id +
 				", user_id=" + user_id +
-				", address=" + address +
+				", name='" + name + '\'' +
+				", local='" + local + '\'' +
 				'}';
 	}
 
@@ -39,12 +41,13 @@ public class Order {//??????
 				Objects.equals(order_no, order.order_no) &&
 				Objects.equals(status, order.status) &&
 				Objects.equals(create_date, order.create_date) &&
-				Objects.equals(address, order.address);
+				Objects.equals(name, order.name) &&
+				Objects.equals(local, order.local);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, order_no, total, status, create_date, address_id, user_id, address);
+		return Objects.hash(id, order_no, total, status, create_date, address_id, user_id, name, local);
 	}
 
 	public String getId() {
@@ -103,11 +106,19 @@ public class Order {//??????
 		this.user_id = user_id;
 	}
 
-	public Address getAddress() {
-		return address;
+	public String getName() {
+		return name;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLocal() {
+		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
 	}
 }

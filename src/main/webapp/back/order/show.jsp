@@ -23,17 +23,17 @@
 			  <td>创建日期</td>
               <td>操作</td>
           </tr>
-       <c:forEach items="${list }" var="list">
+       <c:forEach items="${orders}" var="list">
 		  <tr align='center'> 
 			  <td>${list.id }</td>
 			  <td>${list.order_no }</td>
 			  <td>${list.total }</td>
 			  <td>${list.status }</td>
-			  <td>${list.address.name }</td>
-			  <td>${list.address.local }</td>
+			  <td>${list.name }</td>
+			  <td>${list.local }</td>
 			  <td>${list.create_date }</td>
 			  <td> 
-				<input class="button btn-order" onclick="location.href='${pageContext.request.contextPath}/Order/selectItems?id=${list.id }'" value="订单详细信息 &raquo;" />
+				<input class="button btn-order" onclick="location.href='${pageContext.request.contextPath}/order/selectOne?id=${list.id }'" value="订单详细信息 &raquo;" />
 			  </td>
 		  </tr>
 		  </c:forEach>
